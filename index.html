@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Dave Brunner">
+    <meta name="description" content="Kryptorechner">
+    <meta name="keywords" content="Krypto, Crypto, Bitcoin, Calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- Links -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/validater.js"></script>
+    <!-- Title -->
+    <title>Kryptorechner</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="w3-container w3-teal">
+        <a  href="index.html" style="font-style: inherit;">
+            <h1 id="headerTitle" class="headerTitle">Kryptorechner</h1>
+        </a>
+
+
+        <nav class="w3-bar w3-teal myNav">
+            <button class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="document.getElementById('sub').classList.toggle('w3-hide-small');"> &equiv; </button>
+            <a href="index.html#info" class="w3-bar-item w3-button myNavItem">Informationen</a>
+            <div id="sub" class="  w3-hide-small">
+                <a href="index.html#rechner" class="w3-bar-item w3-button  myNavItem">Kryptorechner</a>
+                <a href="index.html#canvas" class="w3-bar-item w3-button myNavItem">Canvas</a>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section id="info" class="w3-container">
+
+            <h2>Informationen</h2>
+
+            <div class="w3-card-4" style="margin:auto;">
+                <div class="w3-container w3-center"
+                    style="width:50%; max-width: 500px; margin:auto; padding-top: 20px;">
+                    <img src="img/coins.jpg" alt="cryptoCoins" style="width:100%; max-width: 500px;">
+                </div>
+                <div class="w3-container w3-center">
+                    <h3>Herzlich Willkommen!</h3>
+                    <p>Kryptorechner.ch ist der Ort für dich um Fiat-Währungen einfach in Kryptowährungen umzurechnen.
+                        Seit
+                        5 Jahren stehen unsere Website und Kryptorechner für Effizienz, Geschwindigkeit und Datenschutz.
+                        Du
+                        benötigst für die Dienstleistung keinen Benutzeraccount und kannst direkt die gewünschte Währung
+                        umrechnen.</p>
+                    <br>
+                    <h3>
+                        Abbonieren Sie unseren Newsletter!
+                    </h3>
+                    <p>
+
+                        Haben Sie Interesse an den neusten Cryptonews? Dann abbonieren Sie unseren wöchtenlich
+                        erscheinenden Newsletter.
+                        Beim nächsten benutzen des Kryptorechners können Sie das entsprechende Feld anklicken und Ihre
+                        E-Mail Adresse angeben.
+                        <br>
+                        Vielen Dank für Ihren Support!
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="rechner" class="w3-container">
+            <div class="w3-row">
+                <h2>Kryptorechner</h2>
+
+
+
+                <form action="result.php" method="post" class="w3-container w3-card-4" onsubmit="return isValid();"
+                    style="padding: 10px 10px;">
+
+                    <br>
+
+                    <!-- Fiat-Währung -->
+                    <div class="w3-col m3 inputElements">
+                        <label class="w3-text-blue">Fiat-Währung</label>
+                        <br>
+                        <label style="display: inline-block;">
+                            <input class="w3-radio" type="radio" name="fiat" value="CHF" checked>
+                            CHF</label>
+                        <label style="display: inline-block;">
+                            <input class="w3-radio" type="radio" name="fiat" value="EUR">
+                            Euro</label>
+                        <label style="display: inline-block;">
+                            <input class="w3-radio" type="radio" name="fiat" value="USD">
+                            USD</label>
+
+                    </div>
+
+                    <!-- Menge -->
+                    <div class="w3-col m3 inputElements">
+                        <label class="w3-text-blue">Menge</label>
+                        <input class="w3-input" type="number" step="0.1" min="1" max="1000000000" name="menge"
+                            id="menge" style="max-width: 250px;" required="required">
+                    </div>
+
+                    <!-- Krypto -->
+                    <div class="w3-col m3 inputElements">
+                        <label class="w3-text-blue">Umwandeln nach:</label>
+                        <br>
+                        <select class="w3-select w3-text" name="option" style="padding-bottom:10px; max-width: 250px;"
+                            required="required">
+                            <option value="" disabled selected>Choose </option>
+                            <option value="bitcoin">BTC</option>
+                            <option value="ethereum">ETH</option>
+                            <option value="binancecoin">BNB</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="w3-col m3">
+                        <p class="w3-center"><button type=" submit" class="w3-btn w3-teal "
+                                style="width: 100%; max-width: 250px;  margin-top:12px; margin-left: -20px;">Umrechnen</button></p>
+                    </div>
+
+
+                    <!-- Checkbox -->
+                    <div class="w3-col m3 inputElements">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Ich möchte den Newsletter abbonieren</label>
+                    </div>
+
+                    <div class="w3-col m3 inputElements">
+                        <label for="email" class="w3-text-blue">Geben Sie Ihre E-Adresse ein</label>
+                        <input type="email" id="email" name="email" style="width: 100%; max-width: 250px;">
+                    </div>
+                    <div class="w3-col m3 inputElements">
+                        <label for="email2" class="w3-text-blue">Wiederholen Sie ihre E-Mail</label>
+                        <input type="email" id="email2" name="email2" style="width: 100%; max-width: 250px;">
+                    </div>
+                   
+                  
+
+
+
+
+                    
+                    
+
+                </form>
+
+
+            </div>
+        </section>
+
+        <section id="grafik" class="w3-container">
+
+            <h2>Aktuelles</h2>
+
+            <div class="w3-card-4" style="margin:auto;">
+
+                <div class="w3-container w3-center">
+                    <canvas id="canvas" width="400px" height="310px" style="margin-top: 25px;"></canvas>
+
+                    <script>
+                        function draw() {
+                            let canvas = document.getElementById('canvas');
+                            let contex = canvas.getContext('2d');
+
+                            contex.fillStyle = "#ffff00";
+
+                            contex.lineWidth = "3";
+
+                            // Kreis/Coin 
+                            contex.beginPath();
+                            contex.arc(200, 155, 150, 0, 2 * Math.PI, true);
+                            contex.fillStyle = '#F8ECE0';
+                            contex.fill();
+                            contex.closePath();
+                            contex.stroke();
+
+
+                            //Top to left to middle to  top
+                            contex.beginPath();
+                            contex.moveTo(200, 50);
+                            contex.lineTo(150, 150);
+                            contex.lineTo(200, 125);
+                            contex.lineTo(200, 50);
+                            contex.fillStyle = '#E6E6E6';
+                            contex.fill();
+                            contex.closePath();
+                            contex.stroke();
+
+
+                            //Top to right to middle to  top
+                            contex.beginPath();
+                            contex.moveTo(200, 50);
+                            contex.lineTo(250, 150);
+                            contex.lineTo(200, 125);
+                            contex.lineTo(200, 50);
+                            contex.fillStyle = '#A4A4A4';
+                            contex.fill();
+                            contex.closePath();
+                            contex.stroke();
+
+
+                            //left to mid-top to bot to left
+                            contex.beginPath();
+                            contex.moveTo(150, 150);
+                            contex.lineTo(200, 125);
+                            contex.lineTo(200, 190);
+                            contex.lineTo(150, 150);
+                            contex.fillStyle = '#848484';
+                            contex.fill();
+                            contex.closePath();
+                            contex.stroke();
+
+
+                            //right to mid-top to bot to right
+                            contex.beginPath();
+                            contex.moveTo(250, 150);
+                            contex.lineTo(200, 125);
+                            contex.lineTo(200, 190);
+                            contex.lineTo(250, 150);
+                            contex.fillStyle = '#424242';
+                            contex.fill();
+                            contex.closePath();
+                            contex.stroke();
+
+                            //Bot to top-left to bot
+                            contex.beginPath();
+                            contex.moveTo(200, 250);
+                            contex.lineTo(150, 165);
+                            contex.lineTo(200, 205);
+                            contex.lineTo(200, 250);
+
+                            contex.fillStyle = '#E6E6E6';
+                            contex.fill();
+                            contex.closePath();
+                            contex.stroke();
+
+
+                            //Bot to top-right to mid to bot
+                            contex.beginPath();
+                            contex.moveTo(200, 250);
+                            contex.lineTo(250, 165);
+                            contex.lineTo(200, 205);
+                            contex.lineTo(200, 250);
+                            contex.fillStyle = '#A4A4A4';
+                            contex.fill();
+                            contex.closePath();
+                            contex.stroke();
+
+
+
+
+                        }
+
+                        draw();
+                    </script>
+                    <h3>Ethereum</h3>
+
+
+                    <p>
+                        Ethereum ist momentan eine sehr beliebte und hoch im Kurs stehende Kryptowährung. Ethereum ist
+                        ein
+                        dezentrales Open-Source-Blockchain-System mit einer eigenen Kryptowährung, Ether. ETH dient als
+                        Plattform für zahlreiche andere Kryptowährungen sowie für die Ausführung von dezentralen Smart
+                        Contracts.
+                        <br>
+                        <br>
+                        Ethereum wurde erstmals 2013 in einem Whitepaper von <a href="https://de.wikipedia.org/wiki/Vitalik_Buterin" > Vitalik Buterin</a> beschrieben. Buterin,
+                        zusammen
+                        mit anderen Mitbegründern, sicherte sich die Finanzierung für das Projekt in einem öffentlichen
+                        Online-Crowd-Sale im Sommer 2014 und startete die Blockchain offiziell am 30. Juli 2015.
+                        Ethereums erklärtes Ziel ist es, eine globale Plattform für dezentrale Anwendungen zu werden,
+                        die es
+                        Nutzern aus der ganzen Welt ermöglicht, Software zu schreiben und auszuführen, die resistent
+                        gegen
+                        Zensur, Ausfallzeiten und Betrug ist.
+                        Wir dürfen gespannt sein wie sich Ethereum in der Zukunft entwickeln wird!
+                        Für mehr Infos abbonnieren Sie doch unseren Newsletter!
+                    </p>
+                </div>
+            </div>
+            
+            
+        </section>
+        
+    </main>
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+<footer class="w3-container w3-teal">
+<div class="w3-container w3-center">
+    <p class="copyright"> HSLU FS2021 - Dave Brunner Copyright &copy;</p>
+</div>
+
+</footer>
+
+</html>
