@@ -1,20 +1,17 @@
 section {
     max-width: 1500px;
-    margin:auto;
+    margin: auto;
     margin-bottom: 80px;
-
 }
-
 
 .inputElements {
     padding-left: 10px;
     margin: auto;
     padding-bottom: 5px;
     padding-top: 5px;
-   
 }
 
- h2.h2Result {
+h2.h2Result {
     padding-top: 10px;
     font-weight: 700;
     color: rgb(37, 5, 15);
@@ -24,24 +21,18 @@ section {
     padding: 20px;
 }
 
-
-
-.myNavItem {
-    background-color: #0B615E;
-}
-
-
 header a {
     text-decoration: inherit;
     margin-left: 5px;
 }
 
+.myNavItem {
+    background-color: #0B615E;
+}
+
 #headerTitle {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 900;
-    font-size: 4em;
-    text-decoration: underline  black;
-
-    
+    font-size: 3em;
+    text-decoration: underline black;
 }
-
