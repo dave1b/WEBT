@@ -9,8 +9,6 @@
     <meta name="keywords" content="Krypto, Crypto, Bitcoin, Calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
     <!-- Links -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/stylesheet.css">
@@ -18,10 +16,6 @@
     <!-- Title -->
     <title>Kryptorechner</title>
 </head>
-
-
-
-
 
 
 <body>
@@ -103,19 +97,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     # Variablen deklarieren
     $fiatString;
     $valueInCrypto;
@@ -132,8 +113,6 @@
     }
 
 
-
-
     # $fiat Variable initalisieren
     switch ($fiat) {
         case 'CHF':
@@ -146,7 +125,6 @@
             $fiatString = "US-Dollar";
             break;
     }
-
 
 
     # API Aufrufen
@@ -170,7 +148,6 @@
     ?>
 
     <main>
-
 
         <section id="result" class="w3-container">
             <br>
@@ -241,7 +218,7 @@
                     </div>
 
                     <div class="link-container">
-                        <a href="index.html" ><button class="w3-button w3-lime" style="margin: 5px;">Zurück</button></a>
+                        <a href="index.html"><button class="w3-button w3-lime" style="margin: 5px;">Zurück</button></a>
 
                         <a href="<?php echo "https://www.coingecko.com/en/coins/" . $cryptoArray[0]['id']; ?>" style="margin: 5px;">
                             <button class="w3-button w3-lime ">
@@ -258,11 +235,6 @@
 
         </section>
 
-
-
-
-
-
         <section id="history" class="w3-container">
 
             <h2>Verlauf aller Benutzer</h2>
@@ -271,7 +243,7 @@
 
                     <table class="w3-table-all w3-centered">
                         <tr>
-                            <th>Urzeit</th>
+                            <th>Uhrzeit</th>
                             <th>Fiat</th>
                             <th>Crypto</th>
                         </tr>

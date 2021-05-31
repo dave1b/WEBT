@@ -9,12 +9,11 @@
     <meta name="keywords" content="Krypto, Crypto, Bitcoin, Calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
     <!-- Links -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/stylesheet.css">
     <script src="js/validater.js"></script>
+
     <!-- Title -->
     <title>Kryptorechner</title>
 </head>
@@ -53,17 +52,19 @@
                 <div class="w3-container w3-center" style="padding: 30px;">
                     <h3>Herzlich Willkommen!</h3>
                     <p>Kryptorechner.ch ist die beste Website um Fiat-Währungen einfach in Kryptowährungen umzurechnen.
-                        Seit
-                        5 Jahren steht unsere Website und Kryptorechner für Effizienz, Geschwindigkeit und Datenschutz.
-                        Du benötigst für diese kostenlose Dienstleistung keinen Benutzeraccount. 
+                        Unsere Website und Kryptorechner stehen für Effizienz, Geschwindigkeit und Datenschutz.
+                        Du benötigst für diese kostenlose Dienstleistung keinen Benutzeraccount.
                     </p>
                     <br>
                     <p>
-                        
-                        <h3>Bedienung des Kryptorechners</h3>
-                        Um den Kryptorechner zu bedienen geben Sie einfach die gewünschte Fiat-Währung und die entsprechende Menge ein. Anschliessend wählen Sie die Kryptowährung, in die die Fiat-Währung umgerechnet werden soll.
-                        Optional können Sie unseren Newsletter abbonieren, klicken Sie dafür auf die entsprechende Checkbox. Wenn Sie den Newsletter abbonieren sind Sie verpflichtet Ihre E-Mail Adresse anzugeben,
-                        dabei müssen Sie Ihre E-Mail Adresse zwei mal eingeben um Fehler zu erkennen.
+
+                    <h3>Bedienung des Kryptorechners</h3>
+                    Um den Kryptorechner zu bedienen geben Sie einfach die gewünschte Fiat-Währung und die entsprechende
+                    Menge ein. Anschliessend wählen Sie die Kryptowährung, in die die Fiat-Währung umgerechnet werden
+                    soll.
+                    Optional können Sie unseren Newsletter abbonieren, klicken Sie dafür auf die entsprechende Checkbox.
+                    Wenn Sie den Newsletter abbonieren sind Sie verpflichtet Ihre E-Mail Adresse anzugeben,
+                    dabei müssen Sie Ihre E-Mail Adresse zwei mal eingeben um Fehler zu erkennen.
                     </p>
                     <br>
                     <h3>
@@ -86,8 +87,6 @@
         <section id="rechner" class="w3-container">
             <div class="w3-row">
                 <h2>Kryptorechner</h2>
-
-
 
                 <form action="result.php" method="post" class="w3-container w3-card-4" onsubmit="return isValid();"
                     style="padding: 10px 10px;">
@@ -123,7 +122,7 @@
                         <br>
                         <select class="w3-select w3-text" name="option" style="padding-bottom:10px; max-width: 250px;"
                             required="required">
-                            <option value="" disabled selected>Choose </option>
+                            <option value="" disabled selected>Wähle </option>
                             <option value="bitcoin">BTC</option>
                             <option value="ethereum">ETH</option>
                             <option value="binancecoin">BNB</option>
@@ -156,12 +155,6 @@
 
 
 
-
-
-
-
-
-
                 </form>
 
 
@@ -175,104 +168,10 @@
             <div class="w3-card-4" style="margin:auto;">
 
                 <div class="w3-container w3-center">
-                    <canvas id="canvas" width="370px" height="310px" style="margin-top: 25px;"></canvas>
+                    <canvas id="canvas" width="310px" height="310px" style="margin-top: 25px;"></canvas>
 
-                    <script>
-                        function draw() {
-                            let canvas = document.getElementById('canvas');
-                            let contex = canvas.getContext('2d');
+                    <script src="js/draw.js"></script>
 
-                            contex.fillStyle = "#ffff00";
-
-                            contex.lineWidth = "3";
-
-                            // Kreis/Coin 
-                            contex.beginPath();
-                            contex.arc(200, 155, 150, 0, 2 * Math.PI, true);
-                            contex.fillStyle = '#F8ECE0';
-                            contex.fill();
-                            contex.closePath();
-                            contex.stroke();
-
-
-                            //Top to left to middle to  top
-                            contex.beginPath();
-                            contex.moveTo(200, 50);
-                            contex.lineTo(150, 150);
-                            contex.lineTo(200, 125);
-                            contex.lineTo(200, 50);
-                            contex.fillStyle = '#E6E6E6';
-                            contex.fill();
-                            contex.closePath();
-                            contex.stroke();
-
-
-                            //Top to right to middle to  top
-                            contex.beginPath();
-                            contex.moveTo(200, 50);
-                            contex.lineTo(250, 150);
-                            contex.lineTo(200, 125);
-                            contex.lineTo(200, 50);
-                            contex.fillStyle = '#A4A4A4';
-                            contex.fill();
-                            contex.closePath();
-                            contex.stroke();
-
-
-                            //left to mid-top to bot to left
-                            contex.beginPath();
-                            contex.moveTo(150, 150);
-                            contex.lineTo(200, 125);
-                            contex.lineTo(200, 190);
-                            contex.lineTo(150, 150);
-                            contex.fillStyle = '#848484';
-                            contex.fill();
-                            contex.closePath();
-                            contex.stroke();
-
-
-                            //right to mid-top to bot to right
-                            contex.beginPath();
-                            contex.moveTo(250, 150);
-                            contex.lineTo(200, 125);
-                            contex.lineTo(200, 190);
-                            contex.lineTo(250, 150);
-                            contex.fillStyle = '#424242';
-                            contex.fill();
-                            contex.closePath();
-                            contex.stroke();
-
-                            //Bot to top-left to bot
-                            contex.beginPath();
-                            contex.moveTo(200, 250);
-                            contex.lineTo(150, 165);
-                            contex.lineTo(200, 205);
-                            contex.lineTo(200, 250);
-
-                            contex.fillStyle = '#E6E6E6';
-                            contex.fill();
-                            contex.closePath();
-                            contex.stroke();
-
-
-                            //Bot to top-right to mid to bot
-                            contex.beginPath();
-                            contex.moveTo(200, 250);
-                            contex.lineTo(250, 165);
-                            contex.lineTo(200, 205);
-                            contex.lineTo(200, 250);
-                            contex.fillStyle = '#A4A4A4';
-                            contex.fill();
-                            contex.closePath();
-                            contex.stroke();
-
-
-
-
-                        }
-
-                        draw();
-                    </script>
                     <h3>Ethereum</h3>
 
 

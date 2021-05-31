@@ -36,3 +36,14 @@ header a {
     font-size: 3em;
     text-decoration: underline black;
 }
+
+@media (max-width: 400px) {
+    h2.h2Result {
+        margin-left: -15px;
+        font-weight: 400;
+    }
+    #headerTitle {
+        font-weight: 900;
+        font-size: 2.5em;
+    }
+}
